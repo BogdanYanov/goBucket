@@ -67,4 +67,4 @@ PASS
 ok      github.com/BogdanYanov/goBucket/tests   5.135s
 ```
 
-Из этого следует что функция **FasterSearch** работает в 1,3 раза быстрее.
+Из этого следует что функция **FasterSearch** работает в ~1,3 раза быстрее.
