@@ -73,3 +73,30 @@ Order:
 		}
 	}
 }
+
+// FasterOrder search order items in bucket vertically with 'for' and labels
+// Works faster than other searching functions
+func (b *Bucket) FasterOrder(order ...int) {
+
+	itemPos := 0
+	founded := false
+
+	for _, val := range order {
+		itemPos = 0
+		founded = false
+	SearchLoop:
+		for _, list := range *b {
+			if val == list[itemPos] {
+				list[itemPos] = 0
+				founded = true
+				break SearchLoop
+			}
+		}
+		if !founded {
+			if itemPos < len((*b)[0])-1 {
+				itemPos++
+				goto SearchLoop
+			}
+		}
+	}
+}
